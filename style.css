@@ -1,0 +1,318 @@
+/* ================================================================= /
+/ NITHYA BEAUTY ACADEMY - LUXURY STYLESHEET /
+/ Location: West Tambaram, Chennai /
+/ ================================================================= */
+
+:root {
+--bg-dark: #121212;
+--bg-card: #1E1E1E;
+--bg-charcoal: #181818;
+--gold-primary: #D4AF37;
+--gold-light: #F3E5AB;
+--gold-dark: #AA8C2C;
+--text-main: #F5F5F5;
+--text-muted: #B0B0B0;
+--accent-blush: #E8C5C8;
+--transition: all 0.3s ease;
+}
+
+• {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Plus Jakarta Sans', sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
+background-color: var(--bg-dark);
+color: var(--text-main);
+line-height: 1.6;
+overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .brand-font {
+font-family: 'Playfair Display', serif;
+}
+
+/* Navbar */
+navbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background: rgba(18, 18, 18, 0.95);
+backdrop-filter: blur(10px);
+z-index: 1000;
+border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 5%;
+}
+
+.logo-container {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+text-decoration: none;
+}
+
+.logo-badge {
+width: 42px;
+height: 42px;
+border: 2px solid var(--gold-primary);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--gold-primary);
+font-family: 'Playfair Display', serif;
+font-weight: bold;
+font-size: 1.2rem;
+background: rgba(212, 175, 55, 0.05);
+}
+
+.logo-text h1 {
+font-size: 1.1rem;
+color: var(--text-main);
+letter-spacing: 1px;
+}
+
+.logo-text span {
+font-size: 0.75rem;
+color: var(--gold-primary);
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.nav-links {
+display: flex;
+gap: 2rem;
+list-style: none;
+align-items: center;
+}
+
+.nav-links a {
+color: var(--text-main);
+text-decoration: none;
+font-size: 0.9rem;
+font-weight: 500;
+transition: var(--transition);
+}
+
+.nav-links a:hover {
+color: var(--gold-primary);
+}
+
+.btn-gold {
+background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+color: #121212;
+padding: 0.6rem 1.4rem;
+border-radius: 4px;
+font-weight: 600;
+text-decoration: none;
+border: none;
+cursor: pointer;
+transition: var(--transition);
+box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Hero Section */
+.hero {
+height: 100vh;
+background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 0 1rem;
+margin-top: 60px;
+}
+
+.hero-content {
+max-width: 800px;
+}
+
+.hero h2 {
+font-size: 3.2rem;
+margin-bottom: 1rem;
+color: var(--text-main);
+}
+
+.hero h2 span {
+color: var(--gold-primary);
+}
+
+.hero p {
+font-size: 1.1rem;
+color: var(--text-muted);
+margin-bottom: 2rem;
+}
+
+/* Section Styling */
+.section {
+padding: 6rem 5%;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 4rem;
+}
+
+.section-title span {
+color: var(--gold-primary);
+text-transform: uppercase;
+letter-spacing: 3px;
+font-size: 0.85rem;
+font-weight: 600;
+}
+
+.section-title h2 {
+font-size: 2.5rem;
+margin-top: 0.5rem;
+}
+
+/* Courses Grid */
+.courses-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 2rem;
+}
+
+.course-card {
+background: var(--bg-card);
+border-radius: 8px;
+overflow: hidden;
+border: 1px solid rgba(212, 175, 55, 0.1);
+transition: var(--transition);
+}
+
+.course-card:hover {
+transform: translateY(-5px);
+border-color: var(--gold-primary);
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.course-img {
+height: 220px;
+width: 100%;
+object-fit: cover;
+}
+
+.course-info {
+padding: 1.5rem;
+}
+
+.course-info h3 {
+font-size: 1.3rem;
+margin-bottom: 0.5rem;
+color: var(--text-main);
+}
+
+.course-info p {
+color: var(--text-muted);
+font-size: 0.9rem;
+margin-bottom: 1.2rem;
+}
+
+/* Booking Modal */
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.8);
+backdrop-filter: blur(5px);
+z-index: 2000;
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+background: var(--bg-card);
+padding: 2.5rem;
+border-radius: 8px;
+width: 100%;
+max-width: 500px;
+border: 1px solid var(--gold-primary);
+position: relative;
+}
+
+.close-btn {
+position: absolute;
+top: 1rem;
+right: 1.5rem;
+font-size: 1.5rem;
+color: var(--text-muted);
+cursor: pointer;
+background: none;
+border: none;
+}
+
+.close-btn:hover {
+color: var(--gold-primary);
+}
+
+.form-group {
+margin-bottom: 1.2rem;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 0.4rem;
+font-size: 0.85rem;
+color: var(--gold-primary);
+}
+
+.form-control {
+width: 100%;
+padding: 0.75rem 1rem;
+background: var(--bg-dark);
+border: 1px solid rgba(255,255,255,0.1);
+color: var(--text-main);
+border-radius: 4px;
+font-family: inherit;
+}
+
+.form-control:focus {
+outline: none;
+border-color: var(--gold-primary);
+}
+
+/* Floating Actions */
+.floating-actions {
+position: fixed;
+bottom: 2rem;
+right: 2rem;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+z-index: 999;
+}
+
+.float-btn {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+text-decoration: none;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+transition: var(--transition);
+}
+
+.whatsapp-float { background: #25D366; }
+.phone-float { background: var(--gold-primary); color: #121212; }
+
+.float-btn:hover {
+transform: scale(1.1);
+}

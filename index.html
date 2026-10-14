@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithya Beauty Academy | Premier Cosmetology & Aesthetics Institute</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FAF8F2',
+                            100: '#F3EDDF',
+                            200: '#E4D5B7',
+                            300: '#D5BD8F',
+                            400: '#C5A059',
+                            500: '#D4AF37', // Metallic Gold Base
+                            600: '#B89025',
+                            700: '#8C6C1B',
+                            800: '#614B13',
+                            900: '#382B0B',
+                        },
+                        charcoal: {
+                            800: '#222222',
+                            900: '#141414', // High-end dark aesthetic
+                            950: '#0A0A0A',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 4px;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0D0 0%, #D4AF37 50%, #A37F38 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #A37F38 100%);
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-charcoal-900 text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-black">
+
+    <div class="bg-gradient-to-r from-gold-700 via-gold-500 to-gold-700 text-charcoal-950 font-medium py-2 px-4 text-xs md:text-sm text-center tracking-wide shadow-md no-print">
+        <span class="font-bold"><i class="fa-solid fa-graduation-cap mr-1"></i> ISO 9001 Recognized Certification</span> • Admissions Open for 2026 Practical Batches in West Tambaram!
+        <a href="#courses" class="underline font-bold ml-2 hover:text-white transition">Explore Programs</a>
+    </div>
+
+    <nav class="sticky top-0 z-40 bg-charcoal-950/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300 shadow-xl no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Identity -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-full gold-gradient-bg flex items-center justify-center text-charcoal-950 font-serif font-bold text-2xl shadow-lg group-hover:scale-105 transition transform">
+                        N
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold tracking-wider gold-gradient-text block leading-none">NITHYA</span>
+                        <span class="text-[10px] tracking-[0.28em] text-gray-400 font-sans uppercase block mt-1">Beauty Academy</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-gray-300 hover:text-gold-400 transition hover:scale-105">Academy Story</a>
+                    <a href="#courses" class="text-gray-300 hover:text-gold-400 transition hover:scale-105">Courses & Syllabus</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-gold-400 transition hover:scale-105">Training Studio</a>
+                    <a href="#testimonials" class="text-gray-300 hover:text-gold-400 transition hover:scale-105">Student Reviews</a>
+                    <a href="#canva-guide" class="text-gold-300 hover:text-gold-400 transition hover:scale-105"><i class="fa-solid fa-palette mr-1"></i> Canva Guide</a>
+                    <a href="#contact" class="text-gray-300 hover:text-gold-400 transition hover:scale-105">Location</a>
+                </div>
+
+                <!-- Action CTA Buttons -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="downloadWebsiteCode()" class="border border-gold-500/40 text-gold-400 hover:bg-gold-500/10 px-3.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-2 transition" title="Save Source Code">
+                        <i class="fa-solid fa-download"></i> Save Code
+                    </button>
+                    <button onclick="openBookingModal()" class="gold-gradient-bg text-charcoal-950 font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm hover:shadow-lg hover:shadow-gold-500/20 hover:scale-105 transition transform flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Book Course
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <button onclick="downloadWebsiteCode()" class="text-gold-400 p-2 text-xs border border-gold-500/30 rounded-md">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-gold-400 p-2 text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-charcoal-950 border-b border-gold-500/20 px-6 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block text-gray-300 hover:text-gold-400 py-2 border-b border-gray-800">Academy Story</a>
+            <a href="#courses" class="block text-gray-300 hover:text-gold-400 py-2 border-b border-gray-800">Courses & Syllabus</a>
+            <a href="#gallery" class="block text-gray-300 hover:text-gold-400 py-2 border-b border-gray-800">Training Studio</a>
+            <a href="#testimonials" class="block text-gray-300 hover:text-gold-400 py-2 border-b border-gray-800">Student Reviews</a>
+            <a href="#canva-guide" class="block text-gold-300 hover:text-gold-400 py-2 border-b border-gray-800">Canva & Website Guide</a>
+            <a href="#contact" class="block text-gray-300 hover:text-gold-400 py-2">Location & Contact</a>
+            <button onclick="openBookingModal()" class="w-full gold-gradient-bg text-charcoal-950 font-bold py-3 rounded-lg text-center mt-2">
+                <i class="fa-solid fa-graduation-cap mr-1"></i> Book Course Seat
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+        <!-- High-Class Background Visual Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1920&auto=format&fit=crop" alt="High Class Salon Training Academy" class="w-full h-full object-cover object-center filter brightness-[0.3] scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/70 to-charcoal-950/80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <!-- Badge Tag -->
+            <div class="inline-flex items-center gap-2 bg-charcoal-800/90 border border-gold-500/40 text-gold-300 text-xs sm:text-sm px-5 py-2 rounded-full mb-8 backdrop-blur-md shadow-2xl">
+                <i class="fa-solid fa-award text-gold-400"></i> ISO 9001 Certified Beauty & Cosmetology Academy
+            </div>
+
+            <!-- Title Header -->
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight mb-6">
+                Shape Your Career in <span class="gold-gradient-text italic font-normal">Luxury Cosmetology</span> & Styling
+            </h1>
+
+            <!-- Descriptive Text -->
+            <p class="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 font-light">
+                Master advanced makeup artistry, chemical hair transformation, clinical skin aesthetics, and spa therapies with <strong class="text-gold-300">Nithya Beauty Academy</strong> at West Tambaram, Chennai. Live practical sessions, professional kit guidance, and 100% job placement support.
+            </p>
+
+            <!-- Call to Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#courses" class="w-full sm:w-auto gold-gradient-bg text-charcoal-950 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-gold-500/30 hover:scale-105 transition transform flex items-center justify-center gap-2 text-base">
+                    <i class="fa-solid fa-book-open"></i> Browse Courses
+                </a>
+                <button onclick="openBookingModal()" class="w-full sm:w-auto bg-charcoal-800/90 hover:bg-charcoal-800 text-gold-300 border border-gold-500/50 font-semibold px-8 py-4 rounded-full backdrop-blur-md hover:scale-105 transition transform flex items-center justify-center gap-2 text-base">
+                    <i class="fa-solid fa-calendar-plus"></i> Reserve Admission Seat
+                </button>
+            </div>
+
+            <!-- Metric Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-gold-500/20 max-w-4xl mx-auto">
+                <div class="p-3">
+                    <div class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text">1500+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Graduated Tutors</div>
+                </div>
+                <div class="p-3">
+                    <div class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text">100%</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Live Client Practice</div>
+                </div>
+                <div class="p-3">
+                    <div class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text">6+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Master Specializations</div>
+                </div>
+                <div class="p-3">
+                    <div class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text">100%</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Placement Guidance</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-20 bg-charcoal-950 border-y border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">The Gold Standard in Beauty Training</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Why Choose Nithya Beauty Academy?</h2>
+                <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-charcoal-900 p-8 rounded-2xl border border-gold-500/15 hover:border-gold-500/50 transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl gold-gradient-bg text-charcoal-950 flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Recognized Certification</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ISO certified credentials recognized across luxury salons, bridal studios, and international beauty brands.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-charcoal-900 p-8 rounded-2xl border border-gold-500/15 hover:border-gold-500/50 transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl gold-gradient-bg text-charcoal-950 flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Live Model Practicals</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Perform hair chemical treatments, HD bridal draping, and aesthetics on real models, not just mannequins.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-charcoal-900 p-8 rounded-2xl border border-gold-500/15 hover:border-gold-500/50 transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl gold-gradient-bg text-charcoal-950 flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Vanity Kit Assistance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Complete assistance in selecting authentic makeup vanity cosmetics, airbrush tools, and aesthetic gear.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-charcoal-900 p-8 rounded-2xl border border-gold-500/15 hover:border-gold-500/50 transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl gold-gradient-bg text-charcoal-950 flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Salon Startup Guidance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Learn studio pricing strategies, client management, social media marketing, and boutique salon setup.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-24 bg-charcoal-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Professional Curriculum</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Specialized Training Programs</h2>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">Comprehensive courses with flexible timings for students, homemakers, and working professionals.</p>
+            </div>
+
+            <!-- Category Filter Controls -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-12">
+                <button onclick="filterCourses('all', this)" class="filter-btn active bg-gold-500 text-charcoal-950 font-semibold px-5 py-2 rounded-full text-xs sm:text-sm transition">All Programs</button>
+                <button onclick="filterCourses('cosmetology', this)" class="filter-btn bg-charcoal-800 text-gray-300 hover:text-gold-400 border border-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm transition">Cosmetology</button>
+                <button onclick="filterCourses('makeup', this)" class="filter-btn bg-charcoal-800 text-gray-300 hover:text-gold-400 border border-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm transition">Bridal Makeup</button>
+                <button onclick="filterCourses('hair', this)" class="filter-btn bg-charcoal-800 text-gray-300 hover:text-gold-400 border border-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm transition">Hair Dressing</button>
+                <button onclick="filterCourses('skin', this)" class="filter-btn bg-charcoal-800 text-gray-300 hover:text-gold-400 border border-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm transition">Skin & Laser</button>
+                <button onclick="filterCourses('nails', this)" class="filter-btn bg-charcoal-800 text-gray-300 hover:text-gold-400 border border-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm transition">Nails & Spa</button>
+            </div>
+
+            <!-- Course Card Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="course-cards-container">
+
+                <!-- Course 1 -->
+                <div class="course-card cosmetology bg-charcoal-950 rounded-2xl overflow-hidden border-2 border-gold-500/80 hover:border-gold-400 transition duration-300 flex flex-col group shadow-2xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="Master Diploma in Cosmetology" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-gold-500 text-charcoal-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                            Master Certification
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-charcoal-900/90 text-gold-300 text-xs font-bold px-3 py-1 rounded-md border border-gold-500/30">
+                            3 Months • Advanced
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Master Diploma in Cosmetology & Aesthetics</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Our flagship all-inclusive program covering hair chemicals, HD bridal makeup, skin aesthetic treatments, nail artistry, and salon management.
+                            </p>
+                            <div class="bg-charcoal-900/80 p-3 rounded-xl border border-gray-800 mb-6 space-y-1.5 text-xs text-gray-300">
+                                <div class="font-semibold text-gold-400 uppercase tracking-wider mb-1">Syllabus Highlights:</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Full Hair, Skin, Nails & Makeup Modules</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Free Makeup & Hair Starter Vanity Kit</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Guaranteed Interview & Placement Support</div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Course Fee</span>
+                                <span class="text-xl font-bold text-gold-300">₹48,000 <span class="text-xs font-normal text-gray-400">(EMI Available)</span></span>
+                            </div>
+                            <button onclick="selectAndBook('Master Diploma in Cosmetology & Aesthetics')" class="gold-gradient-bg text-charcoal-950 font-bold px-4 py-2.5 rounded-lg text-xs hover:scale-105 transition shadow-md">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card makeup bg-charcoal-950 rounded-2xl overflow-hidden border border-gold-500/20 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop" alt="Bridal Makeup Course" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-charcoal-900/90 text-gold-400 text-xs font-bold px-3 py-1 rounded-full border border-gold-500/30">
+                            High Demand
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-charcoal-900/90 text-gold-300 text-xs font-bold px-3 py-1 rounded-md border border-gold-500/30">
+                            6 Weeks • Intermediate
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Advanced Bridal Makeup & HD Artistry</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Master HD makeup, Airbrush gun application, South Indian & North Indian bridal draping, saree pleating, and eye artistry.
+                            </p>
+                            <div class="bg-charcoal-900/80 p-3 rounded-xl border border-gray-800 mb-6 space-y-1.5 text-xs text-gray-300">
+                                <div class="font-semibold text-gold-400 uppercase tracking-wider mb-1">Syllabus Highlights:</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Airbrush Gun & HD Silicon Makeup</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Professional Saree Draping & Hair Extensions</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Client Consultation & Vanity Pricing</div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Course Fee</span>
+                                <span class="text-xl font-bold text-gold-300">₹26,500</span>
+                            </div>
+                            <button onclick="selectAndBook('Advanced Bridal Makeup & HD Artistry')" class="gold-gradient-bg text-charcoal-950 font-bold px-4 py-2.5 rounded-lg text-xs hover:scale-105 transition shadow-md">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card hair bg-charcoal-950 rounded-2xl overflow-hidden border border-gold-500/20 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop" alt="Hair Styling Course" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute bottom-4 right-4 bg-charcoal-900/90 text-gold-300 text-xs font-bold px-3 py-1 rounded-md border border-gold-500/30">
+                            4 Weeks • All Levels
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Professional Hair Dressing & Chemical Treatments</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Learn modern haircutting techniques, Keratin treatments, Hair Botox, Smoothening, Global Coloring, and Balayage.
+                            </p>
+                            <div class="bg-charcoal-900/80 p-3 rounded-xl border border-gray-800 mb-6 space-y-1.5 text-xs text-gray-300">
+                                <div class="font-semibold text-gold-400 uppercase tracking-wider mb-1">Syllabus Highlights:</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Keratin, Rebonding & Hair Botox</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Global Highlights & Ombre Coloring</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Structured Up-dos & Bridal Hairstyles</div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Course Fee</span>
+                                <span class="text-xl font-bold text-gold-300">₹21,000</span>
+                            </div>
+                            <button onclick="selectAndBook('Professional Hair Dressing & Chemical Treatments')" class="gold-gradient-bg text-charcoal-950 font-bold px-4 py-2.5 rounded-lg text-xs hover:scale-105 transition shadow-md">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card skin bg-charcoal-950 rounded-2xl overflow-hidden border border-gold-500/20 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" alt="Skin Aesthetics Course" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute bottom-4 right-4 bg-charcoal-900/90 text-gold-300 text-xs font-bold px-3 py-1 rounded-md border border-gold-500/30">
+                            4 Weeks • Advanced
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Clinical Skin Aesthetics & Laser Care</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Professional skin analysis, HydraFacial equipment operation, Chemical Peels, Acne Therapy, and anti-aging care.
+                            </p>
+                            <div class="bg-charcoal-900/80 p-3 rounded-xl border border-gray-800 mb-6 space-y-1.5 text-xs text-gray-300">
+                                <div class="font-semibold text-gold-400 uppercase tracking-wider mb-1">Syllabus Highlights:</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> HydraFacial Machine Operation</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Chemical Peeling & Dermaplaning</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Pigmentation & Anti-Aging Treatments</div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Course Fee</span>
+                                <span class="text-xl font-bold text-gold-300">₹24,000</span>
+                            </div>
+                            <button onclick="selectAndBook('Clinical Skin Aesthetics & Laser Care')" class="gold-gradient-bg text-charcoal-950 font-bold px-4 py-2.5 rounded-lg text-xs hover:scale-105 transition shadow-md">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="course-card nails bg-charcoal-950 rounded-2xl overflow-hidden border border-gold-500/20 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop" alt="Nail Extension Art Course" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute bottom-4 right-4 bg-charcoal-900/90 text-gold-300 text-xs font-bold px-3 py-1 rounded-md border border-gold-500/30">
+                            2 Weeks • All Levels
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Nail Art, Extension & Gel Polish Mastery</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Complete hands-on practicals in Acrylic extensions, Gel extensions, Polygel, 3D Nail Art, Chrome finishes, and Refills.
+                            </p>
+                            <div class="bg-charcoal-900/80 p-3 rounded-xl border border-gray-800 mb-6 space-y-1.5 text-xs text-gray-300">
+                                <div class="font-semibold text-gold-400 uppercase tracking-wider mb-1">Syllabus Highlights:</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Acrylic & UV Gel Extension Application</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Encapsulated, Chrome & Foil Art</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Safe Nail Removal & Hygiene Standards</div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Course Fee</span>
+                                <span class="text-xl font-bold text-gold-300">₹14,500</span>
+                            </div>
+                            <button onclick="selectAndBook('Nail Art, Extension & Gel Polish Mastery')" class="gold-gradient-bg text-charcoal-950 font-bold px-4 py-2.5 rounded-lg text-xs hover:scale-105 transition shadow-md">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="course-card nails bg-charcoal-950 rounded-2xl overflow-hidden border border-gold-500/20 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Spa and Body Therapies Course" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute bottom-4 right-4 bg-charcoal-900/90 text-gold-300 text-xs font-bold px-3 py-1 rounded-md border border-gold-500/30">
+                            3 Weeks • Intermediate
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Luxury Body Spa & Aromatherapy</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Master body polishing, Swedish therapy, essential oil blending, reflexology, and spa setup management.
+                            </p>
+                            <div class="bg-charcoal-900/80 p-3 rounded-xl border border-gray-800 mb-6 space-y-1.5 text-xs text-gray-300">
+                                <div class="font-semibold text-gold-400 uppercase tracking-wider mb-1">Syllabus Highlights:</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Swedish & Deep Tissue Massages</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Body Polishing & Scrubs</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Client Relaxation Protocols</div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Course Fee</span>
+                                <span class="text-xl font-bold text-gold-300">₹17,500</span>
+                            </div>
+                            <button onclick="selectAndBook('Luxury Body Spa & Aromatherapy')" class="gold-gradient-bg text-charcoal-950 font-bold px-4 py-2.5 rounded-lg text-xs hover:scale-105 transition shadow-md">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-charcoal-950 border-t border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Inside West Tambaram Campus</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Training Studio & Practical Gallery</h2>
+                <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery 1 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-gray-800 h-72">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="Vanity Studio" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Infrastructure</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Hollywood Vanity Makeup Stations</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-gray-800 h-72">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop" alt="Hair Wash Studio" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Hair Lab</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Hair Wash & Chemical Treatment Stations</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 3 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-gray-800 h-72">
+                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=800&auto=format&fit=crop" alt="Bridal Draping Practical" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Live Model</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Bridal Draping & Hair Accessories Session</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 4 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-gray-800 h-72">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop" alt="Nail Extension Desk" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Nail Studio</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Acrylic & Gel Nail Extension Desks</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 5 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-gray-800 h-72">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" alt="HydraFacial Practice" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Aesthetic Clinic</span>
+                        <h4 class="text-lg font-serif font-bold text-white">HydraFacial & Derma Care Equipment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 6 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-gray-800 h-72">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Convocation Ceremony" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Graduation</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Student Certification & Award Ceremony</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-24 bg-charcoal-900 border-t border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Student Success Stories</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Hear From Our Alumni</h2>
+                <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-charcoal-950 p-8 rounded-2xl border border-gray-800 relative">
+                    <div class="flex text-gold-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                        "Enrolling in the Advanced Bridal Makeup course at Nithya Beauty Academy was the best decision! The tutors gave personal attention to my saree draping and airbrush techniques. I now run my own studio near Tambaram."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-charcoal-950 flex items-center justify-center font-bold font-serif text-lg">
+                            K
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Kavitha M.</h4>
+                            <span class="text-xs text-gold-400">Freelance Bridal Artist, Chennai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-charcoal-950 p-8 rounded-2xl border border-gray-800 relative">
+                    <div class="flex text-gold-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                        "The Hair Chemical module was 100% practical. We performed Keratin and Smoothening on real clients in the Tambaram academy. The guidance on cosmetic kit selection saved me thousands of rupees."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-charcoal-950 flex items-center justify-center font-bold font-serif text-lg">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Ramya S.</h4>
+                            <span class="text-xs text-gold-400">Senior Stylist, Franchise Salon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-charcoal-950 p-8 rounded-2xl border border-gray-800 relative">
+                    <div class="flex text-gold-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                        "The Master Diploma in Cosmetology covered everything from HydraFacials to Gel extensions. Located right off Rajaji Road next to Girias, it was easy to commute every day. I got placed immediately!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-charcoal-950 flex items-center justify-center font-bold font-serif text-lg">
+                            D
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Divya Bharathi</h4>
+                            <span class="text-xs text-gold-400">Cosmetologist & Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="canva-guide" class="py-20 bg-charcoal-950 border-t border-gold-500/20 no-print">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="bg-charcoal-900 border border-gold-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 rounded-xl gold-gradient-bg text-charcoal-950 flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Canva & Website Asset Usage Guide</h3>
+                        <p class="text-xs text-gold-400">How to design flyers, banners & import elements into Canva or code editors</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-300">
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-1 text-gold-400"></i> Using Assets in Canva:
+                        </h4>
+                        <ul class="space-y-2 text-xs leading-relaxed text-gray-400">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-gold-400 mt-0.5"></i> <strong>Color Palette Tokens:</strong> Use Hex Code <code class="text-gold-300 bg-black/50 px-1 rounded">#D4AF37</code> (Metallic Gold) and <code class="text-gold-300 bg-black/50 px-1 rounded">#141414</code> (Charcoal Black) in Canva brand kits.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-gold-400 mt-0.5"></i> <strong>Fonts:</strong> Pair <em class="text-white">Cormorant Garamond</em> (Serif Header) with <em class="text-white">Inter / Montserrat</em> (Body Sans) inside Canva.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-gold-400 mt-0.5"></i> <strong>High-Res Beauty Photos:</strong> Right-click any course image on this site to save or copy the Unsplash URL directly into Canva's "Uploads" section.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-2 text-gold-400"></i> Running the Site Offline / Live:
+                        </h4>
+                        <ul class="space-y-2 text-xs leading-relaxed text-gray-400">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-gold-400 mt-0.5"></i> Click the <strong>"Save Code"</strong> button in the navigation header to download this standalone <code class="text-gold-300 bg-black/50 px-1 rounded">.html</code> file.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-gold-400 mt-0.5"></i> Double click the downloaded file on any laptop or smartphone to launch the complete interactive website instantly.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-charcoal-950 pt-20 pb-10 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-charcoal-950 font-serif font-bold text-xl">
+                            N
+                        </div>
+                        <div>
+                            <span class="font-serif text-2xl font-bold gold-gradient-text block leading-none">NITHYA</span>
+                            <span class="text-xs tracking-[0.28em] text-gray-400 uppercase block mt-1">Beauty Academy</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        West Tambaram's premier beauty school empowering students with practical skills, official certifications, and salon startup support.
+                    </p>
+
+                    <!-- Exact Address Block -->
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-3.5 text-sm text-gray-300">
+                            <i class="fa-solid fa-location-dot text-gold-400 text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-white block mb-0.5">Academy Address:</strong>
+                                10, Ayyasamy St, off Rajaji Road, next to Girias,<br>
+                                West Tambaram, Tambaram, Tamil Nadu 600045.
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3.5 text-sm text-gray-300">
+                            <i class="fa-solid fa-clock text-gold-400 text-base"></i>
+                            <span>Opening Hours: Mon - Sat (9:30 AM - 6:30 PM)</span>
+                        </div>
+
+                        <div class="flex items-center gap-3.5 text-sm text-gray-300">
+                            <i class="fa-solid fa-phone text-gold-400 text-base"></i>
+                            <a href="tel:+919500999922" class="hover:text-gold-400 transition">+91 95009 99922 / +91 98765 43210</a>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://wa.me/919500999922" target="_blank" class="w-10 h-10 rounded-full bg-charcoal-900 border border-gray-800 text-emerald-400 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-charcoal-900 border border-gray-800 text-gold-400 hover:bg-gold-500 hover:text-charcoal-950 flex items-center justify-center transition">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-charcoal-900 border border-gray-800 text-gold-400 hover:bg-gold-500 hover:text-charcoal-950 flex items-center justify-center transition">
+                            <i class="fa-brands fa-facebook-f text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Interactive Preview -->
+                <div class="lg:col-span-7 bg-charcoal-900 p-4 rounded-2xl border border-gold-500/20 flex flex-col justify-between">
+                    <div class="mb-3 flex items-center justify-between px-2">
+                        <span class="text-xs font-semibold text-gold-400 uppercase tracking-wider"><i class="fa-solid fa-map-pin mr-1"></i> West Tambaram Google Maps Location</span>
+                        <a href="https://maps.google.com/?q=10+Ayyasamy+St+West+Tambaram+Chennai+Tamil+Nadu+600045" target="_blank" class="text-xs text-gold-300 hover:underline">Directions <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    </div>
+                    <div class="w-full h-72 rounded-xl overflow-hidden bg-charcoal-950 relative">
+                        <iframe 
+                            title="Nithya Beauty Academy Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.826871146755!2d80.1168!3d12.9228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f0e13bc15ad%3A0x897931c8e9d!2sRajaji%20Rd%2C%20West%20Tambaram%2C%20Tambaram%2C%20Chennai%2C%20Tamil%20Nadu%20600045!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            class="w-full h-full border-0 filter grayscale invert contrast-125 opacity-85" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="mt-4 p-3 bg-charcoal-950/80 rounded-xl border border-gray-800 text-xs text-gray-400 flex items-center justify-between">
+                        <span><i class="fa-solid fa-bus text-gold-400 mr-1.5"></i> 2 Mins walk from Tambaram Railway Station & Bus Stand</span>
+                        <a href="tel:+919500999922" class="gold-gradient-text font-bold hover:underline">Call Admission Tutors</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Download Trigger -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <div>
+                    © 2026 Nithya Beauty Academy. All Rights Reserved. ISO 9001 Recognized Institute.
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="downloadWebsiteCode()" class="text-gold-400 hover:text-gold-300 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-download"></i> Download Web Source Package
+                    </button>
+                    <span>|</span>
+                    <a href="#about" class="hover:text-gray-300">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto no-print">
+        <div class="bg-charcoal-900 border border-gold-500/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl gold-border-glow my-8">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full gold-gradient-bg text-charcoal-950 flex items-center justify-center font-bold text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-white">Course Booking & Admission</h3>
+                <p class="text-xs text-gold-400 mt-1">Nithya Beauty Academy • West Tambaram</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Student Full Name *</label>
+                    <input type="text" id="modalName" required placeholder="Enter student name" class="w-full bg-charcoal-950 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Mobile Phone *</label>
+                        <input type="tel" id="modalPhone" required placeholder="10-digit number" class="w-full bg-charcoal-950 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Email Address</label>
+                        <input type="email" id="modalEmail" placeholder="student@example.com" class="w-full bg-charcoal-950 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Selected Specialization *</label>
+                    <select id="modalCourse" required class="w-full bg-charcoal-950 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                        <option value="Master Diploma in Cosmetology & Aesthetics">Master Diploma in Cosmetology & Aesthetics</option>
+                        <option value="Advanced Bridal Makeup & HD Artistry">Advanced Bridal Makeup & HD Artistry</option>
+                        <option value="Professional Hair Dressing & Chemical Treatments">Professional Hair Dressing & Chemical Treatments</option>
+                        <option value="Clinical Skin Aesthetics & Laser Care">Clinical Skin Aesthetics & Laser Care</option>
+                        <option value="Nail Art, Extension & Gel Polish Mastery">Nail Art, Extension & Gel Polish Mastery</option>
+                        <option value="Luxury Body Spa & Aromatherapy">Luxury Body Spa & Aromatherapy</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Batch Start Date *</label>
+                        <input type="date" id="modalDate" required class="w-full bg-charcoal-950 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Timing Slot *</label>
+                        <select id="modalSlot" class="w-full bg-charcoal-950 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                            <option value="Morning Batch (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
+                            <option value="Afternoon Batch (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
+                            <option value="Weekend Special (Sat & Sun)">Weekend Special (Sat & Sun)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full gold-gradient-bg text-charcoal-950 font-bold py-3.5 rounded-lg text-sm hover:scale-[1.01] transition shadow-lg mt-2">
+                    Confirm & Generate Receipt
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="receiptModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-charcoal-900 border-2 border-gold-500 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-center relative shadow-2xl my-8">
+            <div class="w-16 h-16 rounded-full gold-gradient-bg text-charcoal-950 flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">
+                <i class="fa-solid fa-receipt"></i>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">Admission Receipt</h3>
+            <p class="text-xs text-gold-400 uppercase tracking-widest mb-6">Nithya Beauty Academy • West Tambaram</p>
+
+            <div class="bg-charcoal-950 border border-gold-500/30 p-5 rounded-2xl text-left space-y-3 text-xs text-gray-300 mb-6">
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-400">Booking Reference:</span>
+                    <strong class="text-gold-400 font-mono text-sm" id="recRef">NBA-2026-9821</strong>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-400">Student Name:</span>
+                    <strong class="text-white" id="recName">Kavya Sundaram</strong>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-400">Course Selected:</span>
+                    <strong class="text-gold-300" id="recCourse">Master Diploma in Cosmetology</strong>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-400">Batch Timing:</span>
+                    <span class="text-white" id="recSlot">Morning Batch</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-400">Start Date:</span>
+                    <span class="text-white" id="recDate">10 Nov 2026</span>
+                </div>
+                <div class="flex justify-between pt-1">
+                    <span class="text-gray-400">Status:</span>
+                    <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> Seat Reserved</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-3 no-print">
+                <button onclick="window.print()" class="w-full bg-gold-500/20 text-gold-300 border border-gold-500 font-bold py-3 rounded-xl hover:bg-gold-500 hover:text-charcoal-950 transition flex items-center justify-center gap-2 text-xs">
+                    <i class="fa-solid fa-print"></i> Print / Save Receipt PDF
+                </button>
+                <button onclick="closeReceiptModal()" class="w-full bg-charcoal-800 text-gray-300 hover:text-white font-bold py-3 rounded-xl transition text-xs">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set Default Date Picker Min Date to Today
+        document.getElementById('modalDate').valueAsDate = new Date();
+
+        // Navigation Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Course Category Filter Function
+        function filterCourses(category, btnElement) {
+            const cards = document.querySelectorAll('.course-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-charcoal-950');
+                btn.classList.add('bg-charcoal-800', 'text-gray-300');
+            });
+
+            btnElement.classList.remove('bg-charcoal-800', 'text-gray-300');
+            btnElement.classList.add('bg-gold-500', 'text-charcoal-950');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Controls
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.getElementById('bookingModal').classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('flex');
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function selectAndBook(courseName) {
+            document.getElementById('modalCourse').value = courseName;
+            openBookingModal();
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').classList.remove('flex');
+            document.getElementById('receiptModal').classList.add('hidden');
+        }
+
+        // Handle Booking Submission and Receipt Generation
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('modalName').value;
+            const course = document.getElementById('modalCourse').value;
+            const slot = document.getElementById('modalSlot').value;
+            const date = document.getElementById('modalDate').value;
+            const refCode = 'NBA-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+            document.getElementById('recName').textContent = name;
+            document.getElementById('recCourse').textContent = course;
+            document.getElementById('recSlot').textContent = slot;
+            document.getElementById('recDate').textContent = date;
+            document.getElementById('recRef').textContent = refCode;
+
+            closeBookingModal();
+
+            document.getElementById('receiptModal').classList.remove('hidden');
+            document.getElementById('receiptModal').classList.add('flex');
+        }
+
+        // Single Click Web Code Package Exporter / Downloader
+        function downloadWebsiteCode() {
+            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Nithya_Beauty_Academy_West_Tambaram.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
